@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+
 import com.api.bumbabusapi.models.LineModel;
 import com.api.bumbabusapi.repositories.LineRepository;
 
@@ -29,12 +30,5 @@ public class LineService {
         return lineRepository.findAll();
     }
 
-
-
-
-  /*  public Optional<LineModel> existenumero (int line_number) {
-        return lineRepository.findByNumber(line_number);
         
     }
-*/
-}

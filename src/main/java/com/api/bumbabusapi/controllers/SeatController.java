@@ -1,5 +1,5 @@
 package com.api.bumbabusapi.controllers;
 
-public class SeatMapController {
+public class SeatController {
     
 }

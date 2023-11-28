@@ -53,9 +53,9 @@ public class LineController {
     }
 
    
-  /*  @GetMapping("/{line}")
-    public ResponseEntity<?> getOneByNumber(@PathVariable(value = "line_number") int line_number) {
-        Optional<LineModel> lineModelOptional = lineService.existenumero(line_number);
+ /*   @GetMapping("/{line}")
+    public ResponseEntity<?> getLineByStreet(@PathVariable(value = "line_number") int line_number) {
+        Optional<LineModel> lineModelOptional = lineService.getByLine(line_number);
 
         if (lineModelOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.OK).body(lineModelOptional.get());

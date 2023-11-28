@@ -20,7 +20,6 @@ public class BusModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int bus_id;
     
-
    @ManyToOne
     @JoinColumn(name = "line_id", nullable = false)
     private LineModel linha;
