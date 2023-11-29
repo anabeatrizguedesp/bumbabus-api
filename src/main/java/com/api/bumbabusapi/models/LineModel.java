@@ -1,7 +1,7 @@
 package com.api.bumbabusapi.models;
 
 import java.io.Serializable;
-import java.util.List;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -31,13 +30,10 @@ public class LineModel implements Serializable {
     @JoinColumn(name = "route_id", nullable = false)
     private RouteModel route;
 
-    @OneToMany(mappedBy = "linha")
-    private List<BusModel> busList;
 
 
 
-
-
+    //GETTERS
     public int getLine_id() {
         return line_id;
     }
@@ -59,8 +55,7 @@ public class LineModel implements Serializable {
     }
 
 
-
-
+    //SETTERS
     public void setLine_overc(int line_overc) {
         this.line_overc = line_overc;
     }

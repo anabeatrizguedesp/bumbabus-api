@@ -1,14 +1,13 @@
 package com.api.bumbabusapi.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,8 +24,9 @@ public class RouteModel implements Serializable {
     @Column(nullable = false,  length = 2000 )
     private String route_stops;
 
-    @OneToMany(mappedBy = "route")
-    private List<LineModel> linhas;
+    @OneToOne(mappedBy = "route") // Relação OneToOne entre RouteModel e LineModel
+    private LineModel lines; // Uma rota tem uma linha
+
 
     
     public int getRoutes_id() {
@@ -53,13 +53,7 @@ public class RouteModel implements Serializable {
         this.route_stops = route_stops;
     }
 
-    public List<LineModel> getLinhas() {
-        return linhas;
-    }
-
-    public void setLinhas(List<LineModel> linhas) {
-        this.linhas = linhas;
-    }
+  
 
 
 
